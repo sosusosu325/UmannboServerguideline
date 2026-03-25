@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>処罰ガイドライン (v3.0 Strict)</title>
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --accent-red: #c0392b;
+            --accent-blue: #2980b9;
+            --bg-gray: #f8f9fa;
+            --border-color: #cbd5e1;
+            --table-header: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        h2 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-red);
+            padding-left: 12px;
+            margin-top: 35px;
+            background: linear-gradient(90deg, #fdf2f2 0%, transparent 100%);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .penalty-level {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .penalty-level h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.15em;
+            color: var(--accent-red);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .penalty-level ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .penalty-level li {
+            margin-bottom: 8px;
+        }
+
+        .definition-box {
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+
+        .definition-box h4 {
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+        }
+
+        table.metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            background: #fff;
+        }
+
+        table.metrics-table th, table.metrics-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+
+        table.metrics-table th {
+            background-color: var(--table-header);
+            font-weight: bold;
+        }
+        
+        table.metrics-table tr.ban-row {
+            background-color: #fdf2f2;
+            font-weight: bold;
+            color: var(--accent-red);
+        }
+
+        .special-measure {
+            background: #fff;
+            border: 2px solid var(--accent-red);
+            border-radius: 6px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .special-measure h4 {
+            color: var(--accent-red);
+            margin-top: 0;
+        }
+
+        .policy-list {
+            padding-left: 20px;
+        }
+
+        .policy-list li {
+            margin-bottom: 15px;
+        }
+        
+        .highlight-blue {
+            background: #e1f0fa;
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .warning-box {
+            background: #fdf2f2;
+            border-left: 4px solid var(--accent-red);
+            padding: 15px 20px;
+            margin-top: 30px;
+            font-size: 0.95em;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>処罰ガイドライン (Penalty Guidelines)</h2>
+    <p>本ガイドラインは、サーバー規約に基づく処罰の「機械的かつ不可逆な」適用基準を定めたものです。<br>
+    運営は本基準を厳格に運用し、解釈の余地を利用した処罰逃れ（エクスプロイト）を一切容認しません。</p>
+
+    <h3>1. 「故意」の複合判定ロジック</h3>
+    <div class="definition-box">
+        <h4>過失偽装の防止と故意認定</h4>
+        <p>「知らなかった」「偶然だ」という言い逃れや、運営による過剰な過失認定を防ぐため、以下の要素を用いて判定します。</p>
+        <ul style="margin-bottom: 10px;">
+            <li><strong>要素A [予見可能性]：</strong> 一般的な視点で、他者やサーバーへの損害が容易に想像できたか。</li>
+            <li><strong>要素B [継続性]：</strong> 偶発的な1回ではなく、複数回または一定時間継続して実行したか。</li>
+            <li><strong>要素C [利益享受]：</strong> その行為により、自身または共謀者が経済的・戦略的利益を得たか。</li>
+        </ul>
+        <p style="border-top: 1px dashed #ccc; padding-top: 10px; margin-bottom: 0;">
+            <strong>【有罪判定条件】</strong><br>
+            上記のうち<strong>「要素B（継続性）の単独成立」</strong>、または<strong>「要素AとCの複合（予見可能かつ利益を得た）」</strong>が確認された場合、いかなる理由があろうと「故意」と断定します。
+        </p>
+    </div>
+
+    <h3>2. 被害規模の数値化と機械的適用（累積合算）</h3>
+    
+    <div class="highlight-blue" style="margin-top: 0; margin-bottom: 20px;">
+        <span class="tag">重要原則</span><strong>分割犯行・被害コントロールの無効化</strong><br>
+        1. <strong>【累積被害の原則】</strong> 過去7日間に発生した被害はすべて「同一の犯行」として合算し、合計値で処罰判定を行います。<br>
+        2. <strong>【主カテゴリ適用】</strong> 処罰期間は「最も影響スコアが高い1つの被害カテゴリ」のみを基準とします（意図的に被害人数を増やして14日BANを狙う等の処罰ハックを無効化します）。
+    </div>
+
+    <table class="metrics-table">
+        <thead>
+            <tr>
+                <th>判定基準（被害規模）</th>
+                <th>レベル2 (3日BAN)</th>
+                <th>レベル2 (7日BAN)</th>
+                <th>レベル2 (14日BAN)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>ブロック破壊・設置数</strong><br>（無許可操作の7日間合算）</td>
+                <td>10〜50</td>
+                <td>51〜200</td>
+                <td>201〜999</td>
+            </tr>
+            <tr>
+                <td><strong>アイテム被害（経済基準）</strong><br>（窃盗、ロス誘導等）</td>
+                <td>ダイヤ換算 1〜32個</td>
+                <td>ダイヤ換算 33〜128個<br>または指定希少品1点</td>
+                <td>ダイヤ換算 129〜511個<br>または指定希少品複数</td>
+            </tr>
+            <tr>
+                <td><strong>被害プレイヤー数</strong><br>（直接的被害者の合算）</td>
+                <td>1名</td>
+                <td>2〜3名</td>
+                <td>4名以上</td>
+            </tr>
+            <tr class="ban-row">
+                <td><strong>【レベル3：永久追放】</strong></td>
+                <td colspan="3">破壊1,000ブロック以上 / ダイヤ換算512個以上 / 意図的な同時多発被害（5人以上かつ高額）</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="font-size: 0.9em; color: #666;">※希少品は事前に公式Discordで公開されている『指定保護アイテムリスト』に準拠します。リスト外のアイテムに対する独自価値の主張（運営のその場判断）は採用しません。</p>
+
+    <div class="special-measure">
+        <h4>3. エリトラ制限違反：実質支配とロンダリング対策</h4>
+        <ul>
+            <li><strong>【初回（故意の発覚）】：</strong>超過分のエリトラ没収 ＋ レベル2（3日間BAN）</li>
+            <li><strong>【2回目以降】：</strong>全エリトラ没収 ＋ レベル3（永久BAN）</li>
+        </ul>
+        <div style="background: #fdf2f2; padding: 15px; border-radius: 4px; margin-top: 15px;">
+            <strong>【免責の厳格化と「実質支配」の適用】</strong><br>
+            自己申告による免責は、以下を全て満たす場合のみ適用されます。<br>
+            1. 運営の調査開始・指摘より前の<strong>自主申告</strong>であること。<br>
+            2. サーバーログ上、取得から<strong>【24時間以内】</strong>の申告であること。<br><br>
+            <strong>※実質支配の概念：</strong> 自身のインベントリに存在しなくとも、サブアカウント、権限を持つ共有チェスト、または意図的に隠匿したドロップ状態など、<strong>「実質的に自身の管理下に置いている」とログから証明された場合は所持とみなし、時間制限の起算点とします。</strong>別アカウントを経由したロンダリングは一切認めません。
+        </div>
+    </div>
+
+    <h3>4. 証拠原則：高度な蓋然性の採用</h3>
+    <ol class="policy-list">
+        <li><strong>「合理的な代替説明」の不在による有罪判定：</strong><br>
+        代理行為やトラップ設計など、直接の操作ログが残らない場合でも逃げ切りは不可能です。<br>
+        【間接ログ（アイテム移動、接続時間等）】＋【状況証拠】が一致し、<strong>「第三者の介入やシステムバグなど、対象者以外の要因で発生したという『合理的な代替説明』が存在しない」</strong>と判断された場合、単独の直接ログがなくとも有罪として処断します。</li>
+        
+        <li><strong>状況証拠のみの単独有罪禁止（原則維持）：</strong><br>
+        ただし「怪しい」という心証や偏りだけでの処罰は行いません。必ず上記1を満たすログの裏付けを必須とします。</li>
+    </ol>
+
+    <div class="warning-box">
+        <strong>5. 透明性の担保と判例のリアルタイム公開</strong>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+            <li><strong>致命的行為の定義（後出しBAN対象）：</strong><br>
+            未明記ルールでも即時永久BANとなる対象は以下の通りです。<br>
+            【意図的なサーバークラッシュ（負荷攻撃） / Dupe等の経済崩壊バグ利用 / 他者のデータロスト誘発】</li>
+            
+            <li><strong>判例の随時公開システム：</strong><br>
+            判断基準のフィードバック遅延を防ぐため、<strong>レベル2以上の処罰案件は、執行後【48時間以内】に匿名化された処罰ログ（適用ルール・証拠の概要・処罰日数）をDiscordの専用チャンネルにて随時公開します。</strong>（※月次報告は全体の統計まとめのみとします）</li>
+        </ul>
+    </div>
+
+</body>
+</html>
